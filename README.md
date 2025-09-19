@@ -1,4 +1,60 @@
 # buzzline-04-dowdle
+This project adds a new consumer named **project_consumer_dowdle.py**.  
+
+## What It Does
+The consumer reads live JSON messages written by the **project_producer_case.py** producer.  
+It processes each message, extracts the **author** and **sentiment**, and maintains a **rolling window of the last 20 messages per author**.  
+This allows us to focus on **recent sentiment trends** instead of long-term averages.  
+
+### Insight
+The visualization helps us answer questions like:
+- Which authors are currently more positive or negative?  
+- How do sentiments shift over time?  
+- Are there sudden changes in tone among different authors?  
+
+### Visualization
+The consumer uses a **live bar chart** built with `matplotlib`.  
+Each bar shows the **rolling average sentiment (0–1)** for an author.  
+This chart makes differences in author sentiment immediately visible and continuously updates as new messages arrive.  
+
+---
+
+## Run the Producer and Consumer
+
+You must use the provided producer **without modification**.
+
+### Start Producer (writes to `project_live.json`)
+Open a terminal in the project root and activate your `.venv`.  
+
+**Windows**
+```powershell
+.venv\Scripts\activate
+py -m producers.project_producer_case
+```
+
+**Mac/Linux**
+```source .venv/bin/activate
+python3 -m producers.project_producer_case
+```
+
+### Start Consumer (reads from project_live.json and visualizes sentiment)
+Open a new terminal in the project root and activate your `.venv.`
+
+**Windows**
+
+```.venv\Scripts\activate
+py -m consumers.project_consumer_dowdle
+```
+
+**Mac/Linux**
+```source .venv/bin/activate
+python3 -m consumers.project_consumer_dowdle
+```
+
+Once both are running, you’ll see a live bar chart that updates as new messages are generated.
+Use `CTRL + C` in each terminal to stop when finished.
+
+****
 
 We can analyze and visualize different types of streaming data as the information arrives.
 
