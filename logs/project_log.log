@@ -29,3 +29,20 @@
 2025-09-18 18:59:05 | WARNING | Producer interrupted by user.
 2025-09-18 18:59:05 | INFO | Kafka producer closed.
 2025-09-18 18:59:05 | INFO | END producer.
+2025-09-19 17:40:10 | INFO | Logging to file: logs/project_log.log
+2025-09-19 17:40:10 | INFO | Log sanitization enabled, personal info removed
+2025-09-19 17:40:10 | INFO | START producer...
+2025-09-19 17:40:12 | ERROR | Kafka connection failed: NoBrokersAvailable
+2025-09-19 17:40:12 | INFO | {'message': 'I just shared JavaScript! It was amazing.', 'author': 'Eve', 'timestamp': '2025-09-19 17:40:12', 'category': 'tech', 'sentiment': 0.42, 'keyword_mentioned': 'JavaScript', 'message_length': 41}
+2025-09-19 17:40:17 | INFO | {'message': 'I just loved a trick! It was boring.', 'author': 'Alice', 'timestamp': '2025-09-19 17:40:17', 'category': 'other', 'sentiment': 0.78, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-09-19 17:40:22 | INFO | {'message': 'I just loved game! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-09-19 17:40:22', 'category': 'gaming', 'sentiment': 0.03, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-09-19 17:40:27 | INFO | {'message': 'I just saw a trick! It was boring.', 'author': 'Alice', 'timestamp': '2025-09-19 17:40:27', 'category': 'other', 'sentiment': 0.84, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-09-19 17:40:32 | INFO | {'message': 'I just found an app! It was funny.', 'author': 'Alice', 'timestamp': '2025-09-19 17:40:32', 'category': 'other', 'sentiment': 0.78, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-09-19 17:40:37 | INFO | {'message': 'I just loved travel! It was boring.', 'author': 'Charlie', 'timestamp': '2025-09-19 17:40:37', 'category': 'travel', 'sentiment': 0.54, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-09-19 17:40:42 | INFO | {'message': 'I just loved a meme! It was weird.', 'author': 'Eve', 'timestamp': '2025-09-19 17:40:42', 'category': 'humor', 'sentiment': 0.9, 'keyword_mentioned': 'meme', 'message_length': 34}
+2025-09-19 17:40:47 | INFO | {'message': 'I just loved game! It was weird.', 'author': 'Charlie', 'timestamp': '2025-09-19 17:40:47', 'category': 'gaming', 'sentiment': 0.44, 'keyword_mentioned': 'game', 'message_length': 32}
+2025-09-19 17:40:52 | INFO | {'message': 'I just shared Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-09-19 17:40:52', 'category': 'tech', 'sentiment': 0.75, 'keyword_mentioned': 'Python', 'message_length': 35}
+2025-09-19 17:40:57 | INFO | {'message': 'I just tried game! It was funny.', 'author': 'Alice', 'timestamp': '2025-09-19 17:40:57', 'category': 'gaming', 'sentiment': 0.17, 'keyword_mentioned': 'game', 'message_length': 32}
+2025-09-19 17:41:02 | INFO | {'message': 'I just tried a trick! It was boring.', 'author': 'Alice', 'timestamp': '2025-09-19 17:41:02', 'category': 'other', 'sentiment': 0.64, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-09-19 17:41:02 | WARNING | Producer interrupted by user.
+2025-09-19 17:41:02 | INFO | Producer shutting down.
