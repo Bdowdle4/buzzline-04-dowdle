@@ -51,7 +51,6 @@ def process_message(message):
 
 #####################################
 # Define an update chart function for live plotting
-# This will get called every time a new message is processed
 #####################################
 
 def update_chart():
@@ -88,6 +87,10 @@ def main():
                 continue
 
     print("Consumer finished reading messages.")
+
+    # Keep the window open even after finishing
+    plt.ioff()
+    plt.show(block=True)
 
 
 if __name__ == "__main__":
