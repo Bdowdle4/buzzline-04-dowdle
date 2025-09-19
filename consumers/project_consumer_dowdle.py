@@ -2,7 +2,7 @@
 project_consumer_dowdle.py
 
 Consumer uses a rolling window of the last 20 messages per author.
-
+Continuously tails the file to update live chart as new messages arrive.
 """
 
 #####################################
@@ -13,6 +13,7 @@ import json
 import matplotlib.pyplot as plt
 from collections import defaultdict, deque
 import pathlib
+import time
 
 #####################################
 # Set up data structures
@@ -76,9 +77,18 @@ def update_chart():
 #####################################
 
 def main():
-    """Read from project_producer_case output file and update chart."""
+    """Continuously read from project_producer_case output file and update chart."""
     with DATA_FILE.open("r") as f:
-        for line in f:
+        # Move to the end of the file
+        f.seek(0, 0)
+
+        while True:
+            line = f.readline()
+            if not line:
+                # No new line yet, wait and retry
+                time.sleep(0.5)
+                continue
+
             try:
                 message = json.loads(line.strip())
                 process_message(message)
@@ -86,12 +96,11 @@ def main():
             except json.JSONDecodeError:
                 continue
 
-    print("Consumer finished reading messages.")
-
-    # Keep the window open even after finishing
-    plt.ioff()
-    plt.show(block=True)
-
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nConsumer stopped by user.")
+        plt.ioff()
+        plt.show(block=True)
