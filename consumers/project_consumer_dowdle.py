@@ -12,10 +12,16 @@ Consumer uses a rolling window of the last 20 messages per author.
 import json
 import matplotlib.pyplot as plt
 from collections import defaultdict, deque
+import pathlib
 
 #####################################
 # Set up data structures
 #####################################
+
+# Match the producer's setup
+PROJECT_ROOT = pathlib.Path(__file__).parent.parent
+DATA_FOLDER = PROJECT_ROOT.joinpath("data")
+DATA_FILE = DATA_FOLDER.joinpath("project_live.json")
 
 # Rolling window size
 WINDOW_SIZE = 20
@@ -72,7 +78,7 @@ def update_chart():
 
 def main():
     """Read from project_producer_case output file and update chart."""
-    with open("project_live.json", "r") as f:
+    with DATA_FILE.open("r") as f:
         for line in f:
             try:
                 message = json.loads(line.strip())
